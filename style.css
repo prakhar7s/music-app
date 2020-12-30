@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: rebeccapurple;
+}
+
+#music-app-container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+#music-app {
+}
+
+#music-app #songs-list {
+  display: flex;
+}
+
+#songs-list .song-item {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  margin: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.song-cover {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.song-cover img {
+  height: 100%;
+  width: 100%;
+  transition: all 1s linear;
+}
+.song-cover img:hover {
+  transform: scale(1.1);
+}
+
+.song-item button {
+  position: absolute;
+  z-index: 1;
+  background: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  border-width: 0;
+}
+
+.song-item button i {
+  color: white;
+  font-size: 25px;
+}
+
+.current-song {
+}
+
+#song-name {
+  padding: 10px;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+}
+
+#duration-bar {
+  background-color: red;
+  width: 0%;
+  height: 20px;
+}
