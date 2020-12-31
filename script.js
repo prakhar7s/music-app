@@ -1,12 +1,17 @@
+import { songsNameList } from "./songs-name.js";
+
 const audio = document.querySelector("audio");
 const songsList = document.querySelector("#songs-list");
-const playButton = document.querySelector(".play-button");
+// const playButton = document.querySelector(".play-button");
 const currentSong = document.querySelector("#current-song");
+const pointer = document.querySelector("#pointer");
 
 // Songs
 const songs = [];
 
-for (songName of ["a", "b", "c"]) {
+var songName;
+
+for (songName of songsNameList) {
   const songID = Math.random().toString(36).substring(7);
 
   const song = {
@@ -19,6 +24,8 @@ for (songName of ["a", "b", "c"]) {
 }
 
 var runningTime;
+
+window.playSong = playSong;
 
 function playSong(event) {
   const clickedSong = songs.filter((song) => {
@@ -36,12 +43,21 @@ function playSong(event) {
 
     Array.from(songsList.childNodes).map((songItem) => {
       songItem.childNodes[2].firstChild.className = "fa fa-play";
+      songItem.classList.remove("active");
     });
+
+    event.target.parentNode.parentNode.classList.add("active");
 
     clickedSong[0].song.play();
 
     function s() {
-      console.log(clickedSong[0].song.currentTime);
+      const { currentTime, duration } = clickedSong[0].song;
+      pointer.style.left = `${(100 / duration) * currentTime}%`;
+      console.log(currentTime, duration);
+
+      if (currentTime >= duration) {
+        clearInterval(runningTime);
+      }
     }
 
     runningTime = setInterval(s, 1000);
