@@ -6,22 +6,50 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="./style.css" />
       <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap"
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous"
       />
-      <title>Music app</title>
+      <title>Simple Music App</title>
     </head>
     <body>
       <div id="music-app-container">
-        <div id="music-app">
-          <div class="playing"></div>
-          <div id="songs-list"></div>
-        </div>
+        <div id="songs-list"></div>
         <div id="current-song">
-          <marquee direction="right" id="song-name">dsda</marquee>
-          <div id="duration-bar"><div id="pointer"></div></div>
+          <div class="song-details">
+            <img
+              class="song-cover-image"
+              src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="cover-image"
+            />
+            <div class="song-info">
+              <span class="song-movie">Let's Play Music!</span>
+              <p class="about-song">
+                Music, art concerned with combining vocal or instrumental sounds
+                for beauty of form or emotional expression, usually according to
+                cultural standards of rhythm, melody, and, in most Western
+                music, harmony. Both the simple folk song and the complex
+                electronic composition belong to the same activity, music. Both
+                are humanly engineered; both are conceptual and auditory, and
+                these factors have been present in music of all styles and in
+                all periods of history, throughout the world.
+              </p>
+              <div class="song-duration"></div>
+            </div>
+          </div>
+
+          <div id="duration-bar">
+            <div id="pointer"></div>
+            <div class="buttons">
+              <i class="fa fa-play" aria-hidden="true"></i>
+            </div>
+            <marquee direction="right" id="song-name">Let's Play Music</marquee>
+          </div>
         </div>
       </div>
       <script type="module" src="./script.js" defer></script>
